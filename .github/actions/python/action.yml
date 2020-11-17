@@ -1,0 +1,22 @@
+name: 'python'
+
+description: 'run python script'
+
+author: 'kimura_shuhei'
+
+inputs:
+  script:
+    required: true
+  arg-1:
+    required: true
+  arg-2:
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.script }}
+    - ${{ inputs.arg-1 }}
+    - ${{ inputs.arg-2 }}
+

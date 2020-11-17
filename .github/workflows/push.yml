@@ -1,0 +1,19 @@
+name: actions-examples
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  custom-actions:
+    run-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: python-script
+        uses: ./.github/actions/python
+        with:
+          script: ./.github/actions/python/script.py
+          arg-1: arg-1
+          arg-2: arg-2
+
